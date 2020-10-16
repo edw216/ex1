@@ -14,16 +14,16 @@ public class BoardController {
     }
 
     @GetMapping("/board/echo")
-    public ModelAndView getEcho(@RequestParam String title,
-                          @RequestParam String content) {
+    public ModelAndView getEcho(@RequestParam Integer User_result1,
+                          @RequestParam Integer User_result2) {
         ModelAndView result = new ModelAndView("board/echo");
-        result.getModel().put("title", title);
-        result.getModel().put("content", content);
+        result.getModel().put("User_result1", User_result1);
+        result.getModel().put("User_result2", User_result2);
 
         return result;
     }
 
-    @PostMapping("/board/echo")
+    /*@PostMapping("/board/echo")
     public ModelAndView postEcho(@RequestParam String title,
                                 @RequestParam String content) {
         ModelAndView result = new ModelAndView("board/echo");
@@ -31,7 +31,7 @@ public class BoardController {
         result.getModel().put("content", content);
 
         return result;
-    }
+    }*/
 
     /*@GetMapping("")
     public String getBoard() {
