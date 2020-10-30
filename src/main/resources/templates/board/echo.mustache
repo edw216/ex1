@@ -3,60 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>주사위 결과</title>
-    <script>
-        var rand1;
-        var rand2;
-        var user_sub;
-        var com_sub;
-        function sub1(){
-            var a = {{User_result1}};
-            var b = {{User_result2}};
-            user_sub = a+b;
-            document.write(user_sub);
-        }
-        function Com_roll1(){
-            rand1 = Math.floor(Math.random()*(6-1)+1);
-            document.write(rand1);
-
-        }
-        function Com_roll2(){
-            rand2 = Math.floor(Math.random()*(6-1)+1);
-            document.write(rand2);
-        }
-        function sub2(){
-            com_sub = rand1+rand2;
-            document.write(com_sub);
-        }
-        function result(){
-            if(user_sub>com_sub)
-            {
-                document.write("유저 승 !");
-            }
-            else if(user_sub<com_sub)
-            {
-                document.write("컴퓨터 승 !");
-            }else
-            {
-                document.write("무승부 !");
-            }
-        }
-    </script>
 </head>
 <body>
     <h1>Data</h1>
 
     <p>사용자 주사위 1:{{User_result1}}</p>
     <p>사용자 주사위 2: {{User_result2}}</p>
-    <p><string>사용자 주사위 합:<script>sub1();</script></string></p>
+    <p><string>사용자 주사위 합:{{User}}</string></p>
 
     <br/><br/>
     <hr/>
-    <p>컴퓨터 주사위 1:<script>Com_roll1();</script> </p>
-    <p>컴퓨터 주사위 2:<script>Com_roll2();</script></p>
-    <p><string>사용자 주사위 합:<script>sub2();</script></string></p>
+    <p>컴퓨터 주사위 1:{{comDice1}}</p>
+    <p>컴퓨터 주사위 2:{{comDice2}}</p>
+    <p><string>사용자 주사위 합:{{com_result}}</string></p>
 
     <p>==========================================</p>
-    <p><strong>결과 :<script>result();</script></strong></p>
+    <p><strong>결과 :{{dice_result}}</strong></p>
     <
     <a href="/board">Go Back</a>
 </body>
